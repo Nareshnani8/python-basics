@@ -1,0 +1,38 @@
+l = [1,2,3,4,5] # list is iterable so we need to convert to iterator to traverse list
+
+a = iter(l) # converting to iterator
+
+next(a)  # traversing the list using next() this is whole logic implemented in for loop internally
+
+r= range(6)
+
+r= iter(r)
+
+next(r)
+
+# Basically string, list, tuples , range() are iterables whereas int obj is not iterable
+
+#yield will help you to convert your function to generator function
+
+# if something is generator function you need to use it within for loop and print it
+
+def gencube(n):
+    for i in range(n):
+        yield i**3
+
+gencube(8)
+
+for j in gencube(9):
+    print(j)
+    
+ # fibonacci series
+ 
+ def fibonacci(n):
+    a,b=1,1
+    for i in range(n):
+        yield a,i
+        a,b = b,a+b
+
+
+for i in fibonacci(26):
+    print(i)
