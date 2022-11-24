@@ -36,3 +36,30 @@ for j in gencube(9):
 
 for i in fibonacci(26):
     print(i)
+    
+#File system
+
+f = open('SampleFile.txt','w')
+
+f.write("This is my first program")
+
+f.close()
+
+2nd way :
+
+%%writefile test2.txt
+this is data i would like to store
+
+#to read
+
+f = open("SampleFile.txt")
+
+f.read()
+
+f.read() # blank as it reached end of file
+
+f.seek(0) # takes your cursor to start
+
+f.read()
+
+f.tell() # will telll you where is our cursor
